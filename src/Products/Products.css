@@ -1,0 +1,50 @@
+.grid {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.grid1 {
+  flex-grow: 1;
+  width: 100%;
+  padding-left: 25%;
+  padding-right: 25%;
+  margin: auto;
+  position: relative;
+}
+.grid2 {
+  width: 50%;
+  margin: auto;
+}
+img {
+  margin-left: 12%;
+}
+.prev,
+.next {
+  position: absolute;
+  top: 40%;
+  border-radius: 0 3px 3px 0;
+  font-weight: bold;
+  font-size: 20px;
+  background: transparent;
+}
+.next {
+  right: 0;
+  margin-right: 35%;
+  border-radius: 3px 0 0 3px;
+}
+.thumbnail {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  grid-column-gap: 100%;
+  float: left;
+  width: 10%;
+}
+.thumbimg {
+  /* width: 15%; */
+  height: 80px;
+  opacity: 0.6;
+}
+.thumbimg:hover {
+  opacity: 1;
+}
