@@ -9,6 +9,9 @@ export default function CartProducts() {
 
   function Amnt() {
     let amount = cartItems.map((a) => a.pPrice);
+    let [p1,p2] = amount;
+    console.log(p1);
+    console.log(p2);
     return amount;
   }
   let Addqty = () => {

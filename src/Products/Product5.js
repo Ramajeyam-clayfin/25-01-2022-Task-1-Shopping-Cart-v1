@@ -3,7 +3,7 @@ import { Info } from '../Context';
 import './Products.css';
 
 export default function Product5() {
-  const { setProduct } = useContext(Info);
+  const { setProduct, cartItems, setCartItems, setStep } = useContext(Info);
   const MyImages = [
     {
       label: 'First Picture',
@@ -45,10 +45,26 @@ export default function Product5() {
   const goToPrevPicture = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+  let Addcart = (e) => {
+    e.preventDefault();
+    alert('Backpack is Added to Cart');
+    const addProduct = [
+      {
+        pId: 5,
+        pImg: 'https://rukminim1.flixcart.com/image/150/150/ki3gknk0-0/backpack/t/n/i/spacy-unisex-backpack-with-rain-cover-and-reflective-strip-p-041-original-imafxyypsycttkeb.jpeg?q=70',
+        pName: 'Backpack',
+        pQty: 1,
+        pPrice: 710,
+      },
+      ...cartItems,
+    ];
+    setCartItems(addProduct);
+  };
 
   return (
     <div>
-      <button onClick={() => setProduct(0)}>Back</button>
+      <button onClick={() => setProduct(0)}>Back</button>&nbsp;&nbsp;
+      <button onClick={() => setStep(1)}>Cart</button>
       <h3>
         PROVOGUE - Large 35 L Laptop Backpack Spacy unisex backpack with rain
         cover and reflective strip (Blue)
@@ -130,7 +146,7 @@ export default function Product5() {
           </div>
         </div>
         <div className="grid2">
-          <p>
+          <>
             <h1>₹ 710</h1>
             <br />
             <br />
@@ -146,8 +162,8 @@ export default function Product5() {
             </ul>
             <br />
             <br />
-          </p>
-          <button>Add To Cart</button>&nbsp;&nbsp;
+          </>
+          <button onClick={(e) => Addcart(e)}>Add To Cart</button>&nbsp;&nbsp;
           <button>Buy Now</button>
         </div>
       </div>

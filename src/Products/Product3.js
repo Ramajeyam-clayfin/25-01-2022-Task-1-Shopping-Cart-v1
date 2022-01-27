@@ -3,7 +3,7 @@ import { Info } from '../Context';
 import './Products.css';
 
 export default function Product3() {
-  const { setProduct } = useContext(Info);
+  const { setProduct, cartItems, setCartItems, setStep } = useContext(Info);
   const MyImages = [
     {
       label: 'First Picture',
@@ -35,10 +35,26 @@ export default function Product3() {
   const goToPrevPicture = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+  let Addcart = (e) => {
+    e.preventDefault();
+    alert('Electric Kettle is Added to Cart');
+    const addProduct = [
+      {
+        pId: 3,
+        pImg: 'https://rukminim1.flixcart.com/image/150/150/k0wqwsw0/electric-kettle/g/t/d/butterfly-rapid-kettle-1-5-litre-wave-750-ml-water-bottle-rapid-original-imafkfy7zaekbubs.jpeg?q=70',
+        pName: 'Electric Kettle',
+        pQty: 1,
+        pPrice: 894,
+      },
+      ...cartItems,
+    ];
+    setCartItems(addProduct);
+  };
 
   return (
     <div>
-      <button onClick={() => setProduct(0)}>Back</button>
+      <button onClick={() => setProduct(0)}>Back</button>&nbsp;&nbsp;
+      <button onClick={() => setStep(1)}>Cart</button>
       <h3>Butterfly Rapid Kettle 1.5 Litre + Eco 750 Ml Water Bottle)</h3>
       <div className="grid">
         <div className="grid1">
@@ -101,7 +117,7 @@ export default function Product3() {
           </div>
         </div>
         <div className="grid2">
-          <p>
+          <>
             <h1>₹ 894</h1>
             <br />
             <br />
@@ -126,8 +142,8 @@ export default function Product3() {
               carry. To top it off, it also comes with the best in class safety
               features & stainless Steel water bottle , making it safe to use.
             </p>
-          </p>
-          <button>Add To Cart</button>&nbsp;&nbsp;
+          </>
+          <button onClick={(e) => Addcart(e)}>Add To Cart</button>&nbsp;&nbsp;
           <button>Buy Now</button>
         </div>
       </div>

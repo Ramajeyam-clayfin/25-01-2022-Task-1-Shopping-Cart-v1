@@ -3,7 +3,7 @@ import { Info } from '../Context';
 import './Products.css';
 
 export default function Product4() {
-  const { setProduct } = useContext(Info);
+  const { setProduct, cartItems, setCartItems, setStep } = useContext(Info);
   const MyImages = [
     {
       label: 'First Picture',
@@ -30,10 +30,26 @@ export default function Product4() {
   const goToPrevPicture = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+  let Addcart = (e) => {
+    e.preventDefault();
+    alert('Sewing Machine is Added to Cart');
+    const addProduct = [
+      {
+        pId: 4,
+        pImg: 'https://rukminim1.flixcart.com/image/150/150/sewing-machine/f/c/y/usha-marvella-original-imaegyvtgv6k4rvk.jpeg?q=70',
+        pName: 'Sewing Machine',
+        pQty: 1,
+        pPrice: 12900,
+      },
+      ...cartItems,
+    ];
+    setCartItems(addProduct);
+  };
 
   return (
     <div>
-      <button onClick={() => setProduct(0)}>Back</button>
+      <button onClick={() => setProduct(0)}>Back</button>&nbsp;&nbsp;
+      <button onClick={() => setStep(1)}>Cart</button>
       <h3>
         Singer Simple 3223 85-Watt Automatic Sewing Machine (Green) Electric
         Sewing Machine ( Built-in Stitches 23)
@@ -91,7 +107,7 @@ export default function Product4() {
           </div>
         </div>
         <div className="grid2">
-          <p>
+          <>
             <h1>₹ 12,900</h1>
             <br />
             <br />
@@ -111,8 +127,8 @@ export default function Product4() {
               Sewing Machine, Accessories, Foot Paddle, Warranty Card cum User
               Manual
             </p>
-          </p>
-          <button>Add To Cart</button>&nbsp;&nbsp;
+          </>
+          <button onClick={(e) => Addcart(e)}>Add To Cart</button>&nbsp;&nbsp;
           <button>Buy Now</button>
         </div>
       </div>

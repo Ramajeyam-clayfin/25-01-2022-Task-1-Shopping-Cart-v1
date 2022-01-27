@@ -56,7 +56,7 @@ export default function Items() {
           >
             <img src="https://rukminim1.flixcart.com/image/150/150/kbi9h8w0/mobile/g/g/c/samsung-galaxy-a21s-sm-a217fzkfins-original-imafsuyajewgnfcg.jpeg?q=70" />
           </a>
-          <div class="desc">
+          <div>
             <p> SAMSUNG Galaxy A21s</p>
             <p>Price : ₹ 17,499 </p>
             <button onClick={() => setProduct(1)}>Details</button>
@@ -75,7 +75,7 @@ export default function Items() {
           >
             <img src="https://rukminim1.flixcart.com/image/150/150/kqttg280/stuffed-toy/c/y/n/cute-nylex-mother-teddy-bear-40-fluffies-original-imag4r4yzgauqdxb.jpeg?q=70" />
           </a>
-          <div class="desc">
+          <div>
             <p> Teddy Bear</p>
             <p>Price : ₹ 178 </p>
             <button onClick={() => setProduct(2)}>Details</button>
@@ -94,7 +94,7 @@ export default function Items() {
           >
             <img src="https://rukminim1.flixcart.com/image/150/150/k0wqwsw0/electric-kettle/g/t/d/butterfly-rapid-kettle-1-5-litre-wave-750-ml-water-bottle-rapid-original-imafkfy7zaekbubs.jpeg?q=70" />
           </a>
-          <div class="desc">
+          <div >
             <p> Electric Kettle</p>
             <p>Price : ₹ 894 </p>
             <button onClick={() => setProduct(3)}>Details</button>
@@ -113,7 +113,7 @@ export default function Items() {
           >
             <img src="https://rukminim1.flixcart.com/image/150/150/sewing-machine/f/c/y/usha-marvella-original-imaegyvtgv6k4rvk.jpeg?q=70" />
           </a>
-          <div class="desc">
+          <div >
             <p>Sewing Machine</p>
             <p>Price : ₹ 12,900 </p>
             <button onClick={() => setProduct(4)}>Details</button>
@@ -132,7 +132,7 @@ export default function Items() {
           >
             <img src="https://rukminim1.flixcart.com/image/150/150/ki3gknk0-0/backpack/t/n/i/spacy-unisex-backpack-with-rain-cover-and-reflective-strip-p-041-original-imafxyypsycttkeb.jpeg?q=70" />
           </a>
-          <div class="desc">
+          <div >
             <p>Backpack</p>
             <p>Price : ₹ 710 </p>
             <button onClick={() => setProduct(5)}>Details</button>
@@ -151,7 +151,7 @@ export default function Items() {
           >
             <img src="https://rukminim1.flixcart.com/image/150/150/ksaoqkw0/shoe/y/j/x/9-rider-01cwhiteskyy-asian-white-sky-original-imag5wa8kfhmvvnt.jpeg?q=70" />
           </a>
-          <div class="desc">
+          <div >
             <p>Shoe</p>
             <p>Price : ₹ 1,099 </p>
             <button onClick={() => setProduct(6)}>Details</button>
@@ -170,7 +170,7 @@ export default function Items() {
           >
             <img src="https://rukminim1.flixcart.com/image/150/150/k6fd47k0pkrrdj/headphone/z/f/j/jbl-c100tws-original-imafmtrsguv29yz6.jpeg?q=70" />
           </a>
-          <div class="desc">
+          <div >
             <p>True Wireless Headphone</p>
             <p>Price : ₹ 2,499 </p>
             <button onClick={() => setProduct(7)}>Details</button>
@@ -189,7 +189,7 @@ export default function Items() {
           >
             <img src="https://rukminim1.flixcart.com/image/150/150/kingqkw0-0/speaker/mobile-tablet-speaker/s/8/i/stone-350-boat-original-imafyebfuaumdezs.jpeg?q=70" />
           </a>
-          <div class="desc">
+          <div >
             <p>Bluetooth Speaker</p>
             <p>Price : ₹ 1,499 </p>
             <button onClick={() => setProduct(8)}>Details</button>
@@ -208,7 +208,7 @@ export default function Items() {
           >
             <img src="https://rukminim1.flixcart.com/image/150/150/k7dnonk0/sunglass/c/d/b/medium-ro-dc001-elligator-original-imafpmy5rurzjutm.jpeg?q=70" />
           </a>
-          <div class="desc">
+          <div >
             <p>Sunglass</p>
             <p>Price : ₹ 198 </p>
             <button onClick={() => setProduct(9)}>Details</button>
@@ -227,7 +227,7 @@ export default function Items() {
           >
             <img src="https://rukminim1.flixcart.com/image/150/150/k9d3p8w0/headphone/j/v/f/rockerz-255f-rockerz-255-boat-original-imafr68zshenv3ya.jpeg?q=70" />
           </a>
-          <div class="desc">
+          <div >
             <p>Wireless Headphone</p>
             <p>Price : ₹ 949 </p>
             <button onClick={() => setProduct(10)}>Details</button>

@@ -3,8 +3,7 @@ import { Info } from '../Context';
 import './Products.css';
 
 export default function Product1() {
-  const { setProduct } = useContext(Info);
-
+  const { setProduct, cartItems, setCartItems, setStep } = useContext(Info);
   const MyImages = [
     {
       label: 'First Picture',
@@ -46,10 +45,26 @@ export default function Product1() {
   const goToPrevPicture = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+  let Addcart = (e) => {
+    e.preventDefault();
+    alert('SAMSUNG Galaxy A21s is Added to Cart');
+    const addProduct = [
+      {
+        pId: 1,
+        pImg: 'https://rukminim1.flixcart.com/image/224/224/kbi9h8w0/mobile/g/g/c/samsung-galaxy-a21s-sm-a217fzkfins-original-imafsuyajewgnfcg.jpeg?q=90',
+        pName: 'SAMSUNG Galaxy A21s',
+        pQty: 1,
+        pPrice: 17499,
+      },
+      ...cartItems,
+    ];
+    setCartItems(addProduct);
+  };
 
   return (
     <div>
-      <button onClick={() => setProduct(0)}>Back</button>
+      <button onClick={() => setProduct(0)}>Back</button>&nbsp;&nbsp;
+      <button onClick={() => setStep(1)}>Cart</button>
       <h3>SAMSUNG Galaxy A21s (Black, 64 GB) (4 GB RAM)</h3>
       <div className="grid">
         <div className="grid1">
@@ -134,7 +149,7 @@ export default function Product1() {
           </div>
         </div>
         <div className="grid2">
-          <p>
+          <>
             <h1>₹ 17,499</h1>
             <br />
             <br />
@@ -161,8 +176,8 @@ export default function Product1() {
               selfies, while being the center of attention, thanks to the 13 MP
               front camera with Live Focus effects.
             </p>
-          </p>
-          <button>Add To Cart</button>&nbsp;&nbsp;
+          </>
+          <button onClick={(e) => Addcart(e)}>Add To Cart</button>&nbsp;&nbsp;
           <button>Buy Now</button>
         </div>
       </div>

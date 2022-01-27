@@ -3,7 +3,7 @@ import { Info } from '../Context';
 import './Products.css';
 
 export default function Product10() {
-  const { setProduct } = useContext(Info);
+  const { setProduct, cartItems, setCartItems, setStep } = useContext(Info);
   const MyImages = [
     {
       label: 'First Picture',
@@ -45,10 +45,26 @@ export default function Product10() {
   const goToPrevPicture = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+  let Addcart = (e) => {
+    e.preventDefault();
+    alert('Wireless Headphone is Added to Cart');
+    const addProduct = [
+      {
+        pId: 10,
+        pImg: 'https://rukminim1.flixcart.com/image/150/150/k9d3p8w0/headphone/j/v/f/rockerz-255f-rockerz-255-boat-original-imafr68zshenv3ya.jpeg?q=70',
+        pName: 'Wireless Headphone',
+        pQty: 1,
+        pPrice: 949,
+      },
+      ...cartItems,
+    ];
+    setCartItems(addProduct);
+  };
 
   return (
     <div>
-      <button onClick={() => setProduct(0)}>Back</button>
+      <button onClick={() => setProduct(0)}>Back</button>&nbsp;&nbsp;
+      <button onClick={() => setStep(1)}>Cart</button>
       <h3>
         boAt Rockerz 235v2 with ASAP charging Version 5.0 Bluetooth Headset
         (Black, In the Ear)
@@ -130,7 +146,7 @@ export default function Product10() {
           </div>
         </div>
         <div className="grid2">
-          <p>
+          <>
             <h1>₹ 949</h1>
             <br />
             <br />
@@ -154,8 +170,8 @@ export default function Product10() {
               Easy Access Controls to listen to and manage your favorite music
               with ease.
             </p>
-          </p>
-          <button>Add To Cart</button>&nbsp;&nbsp;
+          </>
+          <button onClick={(e) => Addcart(e)}>Add To Cart</button>&nbsp;&nbsp;
           <button>Buy Now</button>
         </div>
       </div>

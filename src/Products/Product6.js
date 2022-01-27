@@ -3,7 +3,7 @@ import { Info } from '../Context';
 import './Products.css';
 
 export default function Product6() {
-  const { setProduct } = useContext(Info);
+  const { setProduct, cartItems, setCartItems, setStep } = useContext(Info);
   const MyImages = [
     {
       label: 'First Picture',
@@ -45,10 +45,26 @@ export default function Product6() {
   const goToPrevPicture = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+  let Addcart = (e) => {
+    e.preventDefault();
+    alert('Shoe is Added to Cart');
+    const addProduct = [
+      {
+        pId: 6,
+        pImg: 'https://rukminim1.flixcart.com/image/150/150/ksaoqkw0/shoe/y/j/x/9-rider-01cwhiteskyy-asian-white-sky-original-imag5wa8kfhmvvnt.jpeg?q=70',
+        pName: 'Shoe',
+        pQty: 1,
+        pPrice: 1099,
+      },
+      ...cartItems,
+    ];
+    setCartItems(addProduct);
+  };
 
   return (
     <div>
-      <button onClick={() => setProduct(0)}>Back</button>
+      <button onClick={() => setProduct(0)}>Back</button>&nbsp;&nbsp;
+      <button onClick={() => setStep(1)}>Cart</button>
       <h3>
         ASIAN - Rider-01 White Running Shoes for Men I Sport Shoes for Boys with
         Beads Technology Sole for Extra Jump I Memory Foam Insole Running Shoes
@@ -131,7 +147,7 @@ export default function Product6() {
           </div>
         </div>
         <div className="grid2">
-          <p>
+          <>
             <h1>₹ 1,099</h1>
             <br />
             <br />
@@ -151,8 +167,8 @@ export default function Product6() {
               Rider-01 White Running Shoes for Men I Sport Shoes for Boys with
               Beads Technology Sole for Extra Jump I Memory Foam Insole
             </p>
-          </p>
-          <button>Add To Cart</button>&nbsp;&nbsp;
+          </>
+          <button onClick={(e) => Addcart(e)}>Add To Cart</button>&nbsp;&nbsp;
           <button>Buy Now</button>
         </div>
       </div>

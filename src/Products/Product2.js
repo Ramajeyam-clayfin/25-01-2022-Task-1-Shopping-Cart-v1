@@ -3,7 +3,7 @@ import { Info } from '../Context';
 import './Products.css';
 
 export default function Product2() {
-  const { setProduct } = useContext(Info);
+  const { setProduct, cartItems, setCartItems, setStep } = useContext(Info);
 
   const MyImages = [
     {
@@ -31,10 +31,26 @@ export default function Product2() {
   const goToPrevPicture = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+  let Addcart = (e) => {
+    e.preventDefault();
+    alert('Teddy Bear is Added to Cart');
+    const addProduct = [
+      {
+        pId: 2,
+        pImg: 'https://rukminim1.flixcart.com/image/150/150/kqttg280/stuffed-toy/c/y/n/cute-nylex-mother-teddy-bear-40-fluffies-original-imag4r4yzgauqdxb.jpeg?q=70',
+        pName: 'Teddy Bear',
+        pQty: 1,
+        pPrice: 178,
+      },
+      ...cartItems,
+    ];
+    setCartItems(addProduct);
+  };
 
   return (
     <div>
-      <button onClick={() => setProduct(0)}>Back</button>
+      <button onClick={() => setProduct(0)}>Back</button>&nbsp;&nbsp;
+      <button onClick={() => setStep(1)}>Cart</button>
       <h3>Fluffies Cute Nylex Mother Teddy Bear - 40 cm (Pink)</h3>
       <div className="grid">
         <div className="grid1">
@@ -89,7 +105,7 @@ export default function Product2() {
           </div>
         </div>
         <div className="grid2">
-          <p>
+          <>
             <h1>₹ 178</h1>
             <br />
             <br />
@@ -103,8 +119,8 @@ export default function Product2() {
             </ul>
             <br />
             <br />
-          </p>
-          <button>Add To Cart</button>&nbsp;&nbsp;
+          </>
+          <button onClick={(e) => Addcart(e)}>Add To Cart</button>&nbsp;&nbsp;
           <button>Buy Now</button>
         </div>
       </div>
