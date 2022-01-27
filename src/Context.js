@@ -16,6 +16,7 @@ export const InfoProvider = (props) => {
   //   country: '',
   // });
   // const [course, setcourse] = useState({ lang: '', payment: '' });
+  const [product, setProduct] = useState(0);
   const [currentStep, setStep] = useState(0);
 
   return (
@@ -26,7 +27,7 @@ export const InfoProvider = (props) => {
         //   course, setcourse,
         //   currentStep, setStep}
         // }
-        value={{ currentStep, setStep }}
+        value={{ product, setProduct, currentStep, setStep }}
       >
         {props.children}
       </Info.Provider>

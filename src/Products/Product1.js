@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Info } from '../Context';
 import './Products.css';
 
 export default function Product1() {
+  const { setProduct } = useContext(Info);
+
   const MyImages = [
     {
       label: 'First Picture',
@@ -46,14 +49,17 @@ export default function Product1() {
 
   return (
     <div>
+      <button onClick={() => setProduct(0)}>Back</button>
       <h3>SAMSUNG Galaxy A21s (Black, 64 GB) (4 GB RAM)</h3>
       <div className="grid">
         <div className="grid1">
-          <img
-            src={MyImages[index].imgPath}
-            style={{ overflow: 'hidden' }}
-            alt={MyImages[index].label}
-          />
+          <div className="mainimg">
+            <img
+              src={MyImages[index].imgPath}
+              style={{ overflow: 'hidden' }}
+              alt={MyImages[index].label}
+            />
+          </div>
           <br />
           <button
             className="prev"
@@ -68,15 +74,63 @@ export default function Product1() {
             disabled={index === CollectionSize - 1}
           >
             ❯
-          </button><br/><br/>
-          <div className='thumbnail'>
-            <img className='thumbimg'  src={MyImages[0].imgPath} onClick={()=>setActiveStep(0) }/>
-            <img className='thumbimg'  src={MyImages[1].imgPath} onClick={()=>setActiveStep(1) }/>
-            <img className='thumbimg'  src={MyImages[2].imgPath} onClick={()=>setActiveStep(2) }/>
-            <img className='thumbimg'  src={MyImages[3].imgPath} onClick={()=>setActiveStep(3) }/>
-            <img className='thumbimg'  src={MyImages[4].imgPath} onClick={()=>setActiveStep(4) }/>
-            <img className='thumbimg'  src={MyImages[5].imgPath} onClick={()=>setActiveStep(5) }/>
-            
+          </button>
+          <br />
+          <br />
+          <div className="thumbnail">
+            <div>
+              <img
+                className="thumbimg"
+                style={{ width: 'auto' }}
+                src={MyImages[0].imgPath}
+                onClick={() => setActiveStep(0)}
+              />
+            </div>
+
+            <div>
+              <img
+                className="thumbimg"
+                style={{ width: 'auto' }}
+                src={MyImages[1].imgPath}
+                onClick={() => setActiveStep(1)}
+              />
+            </div>
+
+            <div>
+              <img
+                className="thumbimg"
+                style={{ width: 'auto' }}
+                src={MyImages[2].imgPath}
+                onClick={() => setActiveStep(2)}
+              />
+            </div>
+
+            <div>
+              <img
+                className="thumbimg"
+                style={{ width: 'auto' }}
+                src={MyImages[3].imgPath}
+                onClick={() => setActiveStep(3)}
+              />
+            </div>
+
+            <div>
+              <img
+                className="thumbimg"
+                style={{ width: 'auto' }}
+                src={MyImages[4].imgPath}
+                onClick={() => setActiveStep(4)}
+              />
+            </div>
+
+            <div>
+              <img
+                className="thumbimg"
+                style={{ width: 'auto' }}
+                src={MyImages[5].imgPath}
+                onClick={() => setActiveStep(5)}
+              />
+            </div>
           </div>
         </div>
         <div className="grid2">

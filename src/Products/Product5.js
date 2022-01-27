@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Info } from '../Context';
 import './Products.css';
 
 export default function Product5() {
+  const { setProduct } = useContext(Info);
   const MyImages = [
     {
       label: 'First Picture',
@@ -33,16 +35,6 @@ export default function Product5() {
       imgPath:
         'https://rukminim1.flixcart.com/image/800/960/ki3gknk0-0/backpack/f/k/u/spacy-unisex-backpack-with-rain-cover-and-reflective-strip-p-041-original-imafxyypwhfynrts.jpeg?q=50',
     },
-    {
-      label: 'Seventh Picture',
-      imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/kh5607k0/backpack/6/7/q/litt-unisex-backpack-with-rain-cover-and-reflective-strip-p-032-original-imafx86avhnsytef.jpeg?q=50',
-    },
-    {
-      label: 'Eighth Picture',
-      imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/klv7ekw0/backpack/b/q/6/classic-4ss-adn336-laptop-backpack-adidas-original-imagyw65uyfkmu3c.jpeg?q=50',
-    },
   ];
   const CollectionSize = MyImages.length;
   const [index, setActiveStep] = React.useState(0);
@@ -56,17 +48,20 @@ export default function Product5() {
 
   return (
     <div>
+      <button onClick={() => setProduct(0)}>Back</button>
       <h3>
         PROVOGUE - Large 35 L Laptop Backpack Spacy unisex backpack with rain
         cover and reflective strip (Blue)
       </h3>
       <div className="grid">
         <div className="grid1">
-          <img
-            src={MyImages[index].imgPath}
-            style={{ overflow: 'hidden' }}
-            alt={MyImages[index].label}
-          />
+          <div className="mainimg">
+            <img
+              src={MyImages[index].imgPath}
+              style={{ overflow: 'hidden', width: '80%' }}
+              alt={MyImages[index].label}
+            />
+          </div>
           <br />
           <button
             className="prev"
@@ -85,46 +80,53 @@ export default function Product5() {
           <br />
           <br />
           <div className="thumbnail">
-            <img
-              className="thumbimg"
-              src={MyImages[0].imgPath}
-              onClick={() => setActiveStep(0)}
-            />
-            <img
-              className="thumbimg"
-              src={MyImages[1].imgPath}
-              onClick={() => setActiveStep(1)}
-            />
-            <img
-              className="thumbimg"
-              src={MyImages[2].imgPath}
-              onClick={() => setActiveStep(2)}
-            />
-            <img
-              className="thumbimg"
-              src={MyImages[3].imgPath}
-              onClick={() => setActiveStep(3)}
-            />
-            <img
-              className="thumbimg"
-              src={MyImages[4].imgPath}
-              onClick={() => setActiveStep(4)}
-            />
-            <img
-              className="thumbimg"
-              src={MyImages[5].imgPath}
-              onClick={() => setActiveStep(5)}
-            />
-            <img
-              className="thumbimg"
-              src={MyImages[6].imgPath}
-              onClick={() => setActiveStep(6)}
-            />
-            <img
-              className="thumbimg"
-              src={MyImages[7].imgPath}
-              onClick={() => setActiveStep(7)}
-            />
+            <div>
+              <img
+                className="thumbimg"
+                src={MyImages[0].imgPath}
+                onClick={() => setActiveStep(0)}
+              />
+            </div>
+
+            <div>
+              <img
+                className="thumbimg"
+                src={MyImages[1].imgPath}
+                onClick={() => setActiveStep(1)}
+              />
+            </div>
+
+            <div>
+              <img
+                className="thumbimg"
+                src={MyImages[2].imgPath}
+                onClick={() => setActiveStep(2)}
+              />
+            </div>
+
+            <div>
+              <img
+                className="thumbimg"
+                src={MyImages[3].imgPath}
+                onClick={() => setActiveStep(3)}
+              />
+            </div>
+
+            <div>
+              <img
+                className="thumbimg"
+                src={MyImages[4].imgPath}
+                onClick={() => setActiveStep(4)}
+              />
+            </div>
+
+            <div>
+              <img
+                className="thumbimg"
+                src={MyImages[5].imgPath}
+                onClick={() => setActiveStep(5)}
+              />
+            </div>
           </div>
         </div>
         <div className="grid2">
