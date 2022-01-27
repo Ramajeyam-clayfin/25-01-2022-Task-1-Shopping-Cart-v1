@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Info } from './Context';
 
 export default function CartProducts() {
-  const { cartItems, setCartItems } = useContext(Info);
+  const { cartItems, setCartItems, setStep } = useContext(Info);
   const [tPrice, setPrice] = useState(Amnt());
 
   function Amnt() {
@@ -35,6 +35,10 @@ export default function CartProducts() {
     setPrice(Amnt());
     return;
   };
+  let remove = (id) =>{
+    const removeitem = cartItems.filter((r) => r.pId !== id);
+    setCartItems([...removeitem]);
+  }
 
   return (
     <div>
@@ -45,10 +49,27 @@ export default function CartProducts() {
           {x.pName}&nbsp;&nbsp; Price : ₹ {x.pPrice}&nbsp;&nbsp; Qty : {x.pQty}
           &nbsp;&nbsp;
           <button onClick={() => addqty(x.pId)}>+</button>&nbsp;&nbsp;{' '}
-          <button onClick={() => Subqty(x.pId)}>-</button>
+          {
+            x.pQty > 1 &&
+              <button
+                onClick={() => Subqty(x.pId)}
+                className="">
+                -
+              </button>
+          }
+
+          {
+            x.pQty === 1 &&
+              <button
+                onClick={() => remove(x.pId)}
+                className="">
+                Remove
+              </button>
+          }
+          
         </div>
       ))}
-      Total Price : ₹ {tPrice}
+      Total Price : ₹ {tPrice}&nbsp;&nbsp; <button onClick={() => setStep(2)}>Checkout</button>
     </div>
   );
 }
