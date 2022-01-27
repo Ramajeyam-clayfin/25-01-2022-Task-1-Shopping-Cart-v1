@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react';
 import { Info } from './Context';
 
 export default function CartProducts() {
-  const { cartItems, setCartItems, setStep } = useContext(Info);
-  const [tPrice, setPrice] = useState(Amnt());
-
+  const { cartItems, setCartItems, setStep, tPrice, setPrice } = useContext(Info);
+ 
+  setPrice(Amnt());
   function Amnt() {
     let price = cartItems.reduce(
       (total, product) => total + product.pPrice * product.pQty,
@@ -12,6 +12,7 @@ export default function CartProducts() {
     );
     return price;
   }
+  
   let addqty = (id) => {
     const newArr = cartItems.map((obj) => {
       if (obj.pId === id) {

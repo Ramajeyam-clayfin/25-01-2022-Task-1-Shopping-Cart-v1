@@ -182,6 +182,8 @@ export default function Items() {
         setCartItems(addProduct10);
       }
     };
+
+
     return (
       <div className="products">
         <button onClick={() => setStep(1)}>Cart</button>
@@ -201,8 +203,7 @@ export default function Items() {
             <button onClick={() => setProduct(1)}>Details</button>
             <button onClick={(e) => Addcart(e, (id = 1))}>Add to Cart</button>
             <br />
-            <button>Buy Now</button>
-            <p>Product : 1 </p>
+            
           </div>
         </div>
 
@@ -220,8 +221,7 @@ export default function Items() {
             <button onClick={() => setProduct(2)}>Details</button>
             <button onClick={(e) => Addcart(e, (id = 2))}>Add to Cart</button>
             <br />
-            <button>Buy Now</button>
-            <p>Product : 2</p>
+            
           </div>
         </div>
 
@@ -239,8 +239,7 @@ export default function Items() {
             <button onClick={() => setProduct(3)}>Details</button>
             <button onClick={(e) => Addcart(e, (id = 3))}>Add to Cart</button>
             <br />
-            <button>Buy Now</button>
-            <p>Product : 3</p>
+            
           </div>
         </div>
 
@@ -258,8 +257,7 @@ export default function Items() {
             <button onClick={() => setProduct(4)}>Details</button>
             <button onClick={(e) => Addcart(e, (id = 4))}>Add to Cart</button>
             <br />
-            <button>Buy Now</button>
-            <p>Product : 4</p>
+            
           </div>
         </div>
 
@@ -277,8 +275,7 @@ export default function Items() {
             <button onClick={() => setProduct(5)}>Details</button>
             <button onClick={(e) => Addcart(e, (id = 5))}>Add to Cart</button>
             <br />
-            <button>Buy Now</button>
-            <p>Product : 5</p>
+            
           </div>
         </div>
 
@@ -296,8 +293,7 @@ export default function Items() {
             <button onClick={() => setProduct(6)}>Details</button>
             <button onClick={(e) => Addcart(e, (id = 6))}>Add to Cart</button>
             <br />
-            <button>Buy Now</button>
-            <p>Product : 6</p>
+            
           </div>
         </div>
 
@@ -315,8 +311,7 @@ export default function Items() {
             <button onClick={() => setProduct(7)}>Details</button>
             <button onClick={(e) => Addcart(e, (id = 7))}>Add to Cart</button>
             <br />
-            <button>Buy Now</button>
-            <p>Product : 7</p>
+            
           </div>
         </div>
 
@@ -334,8 +329,7 @@ export default function Items() {
             <button onClick={() => setProduct(8)}>Details</button>
             <button onClick={(e) => Addcart(e, (id = 8))}>Add to Cart</button>
             <br />
-            <button>Buy Now</button>
-            <p>Product : 8</p>
+            
           </div>
         </div>
 
@@ -353,8 +347,7 @@ export default function Items() {
             <button onClick={() => setProduct(9)}>Details</button>
             <button onClick={(e) => Addcart(e, (id = 9))}>Add to Cart</button>
             <br />
-            <button>Buy Now</button>
-            <p>Product : 9</p>
+            
           </div>
         </div>
 
@@ -372,8 +365,7 @@ export default function Items() {
             <button onClick={() => setProduct(10)}>Details</button>
             <button onClick={(e) => Addcart(e, (id = 10))}>Add to Cart</button>
             <br />
-            <button>Buy Now</button>
-            <p>Product : 10</p>
+            
           </div>
         </div>
       </div>
