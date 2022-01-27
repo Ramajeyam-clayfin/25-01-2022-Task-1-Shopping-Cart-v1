@@ -2,38 +2,38 @@ import React, { useContext } from 'react';
 import { Info } from '../Context';
 import './Products.css';
 
-export default function Product6() {
+export default function Product10() {
   const { setProduct } = useContext(Info);
   const MyImages = [
     {
       label: 'First Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/ki7qw7k0-0/shoe/9/d/t/rider-01cskywht-7-asian-white-original-imafyfxhb5rg6xzx.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kv9urgw0/headphone/t/h/u/-original-imag87kdvdhmaynm.jpeg?q=70',
     },
     {
       label: 'Second Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/ki7qw7k0-0/shoe/d/i/x/rider-01cskywht-7-asian-white-original-imafyfxhs6cpuwhe.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kv9urgw0/headphone/a/g/u/-original-imag87kdeqtn7pgk.jpeg?q=70',
     },
     {
       label: 'Third Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/kidgnm80-0/shoe/i/7/a/rider-01ncskywht-10-wilto-multi-original-imafy6cyemwuksqt.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kv9urgw0/headphone/z/b/u/-original-imag87kdvjfgfufj.jpeg?q=70',
     },
     {
       label: 'Fourth Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/kidgnm80-0/shoe/n/q/g/rider-01ncskywht-8-wilto-multi-original-imafy6bhgyuhqahu.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kv9urgw0/headphone/5/l/y/-original-imag87kd2aeeee5a.jpeg?q=70',
     },
     {
       label: 'Fifth Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/ki7qw7k0-0/shoe/i/i/n/rider-01cskywht-7-asian-white-original-imafyfxh69d6wugf.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kv9urgw0/headphone/x/b/p/-original-imag87kdxyzreshj.jpeg?q=70',
     },
     {
       label: 'Sixth Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/ki7qw7k0-0/shoe/z/m/y/rider-01cskywht-7-asian-white-original-imafyfxhafgrme7c.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kv9urgw0/headphone/d/k/1/-original-imag87kduyqykf5d.jpeg?q=70',
     },
   ];
   const CollectionSize = MyImages.length;
@@ -50,9 +50,8 @@ export default function Product6() {
     <div>
       <button onClick={() => setProduct(0)}>Back</button>
       <h3>
-        ASIAN - Rider-01 White Running Shoes for Men I Sport Shoes for Boys with
-        Beads Technology Sole for Extra Jump I Memory Foam Insole Running Shoes
-        For Men (White)
+        boAt Rockerz 235v2 with ASAP charging Version 5.0 Bluetooth Headset
+        (Black, In the Ear)
       </h3>
       <div className="grid">
         <div className="grid1">
@@ -132,24 +131,28 @@ export default function Product6() {
         </div>
         <div className="grid2">
           <p>
-            <h1>₹ 1,099</h1>
+            <h1>₹ 949</h1>
             <br />
             <br />
             <b>Highlights :</b>
             <br />
             <br />
             <ul>
-              <li>Color : White</li>
-              <li>Outer material : Fabric</li>
-              <li>Sole material : Phylon</li>
-              <li>14 Days Return Policy</li>
+              <li>Battery Time: Upto 8 Hours</li>
+              <li>ASAP Charge: 20 Mins= 4 Hours</li>
+              <li>IPX5: Water & Sweat Resistance</li>
+              <li>Wireless range: 10 m</li>
+              <li>10m Drivers</li>
             </ul>
             <br />
             <br />
             <b>Description :</b>
             <p>
-              Rider-01 White Running Shoes for Men I Sport Shoes for Boys with
-              Beads Technology Sole for Extra Jump I Memory Foam Insole
+              Let music brighten up your mood anytime, anywhere with the boAt
+              235v2 Fast Charging Bluetooth Headset. This Bluetooth headset
+              features a Call Vibration Alert, a Fast Charging Technology, and
+              Easy Access Controls to listen to and manage your favorite music
+              with ease.
             </p>
           </p>
           <button>Add To Cart</button>&nbsp;&nbsp;

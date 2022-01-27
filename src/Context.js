@@ -16,7 +16,7 @@ export const InfoProvider = (props) => {
   //   country: '',
   // });
   // const [course, setcourse] = useState({ lang: '', payment: '' });
-  const [product, setProduct] = useState(0);
+  const [product, setProduct] = useState(10);
   const [currentStep, setStep] = useState(0);
 
   return (

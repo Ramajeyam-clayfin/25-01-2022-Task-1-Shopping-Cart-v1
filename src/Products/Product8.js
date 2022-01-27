@@ -2,38 +2,38 @@ import React, { useContext } from 'react';
 import { Info } from '../Context';
 import './Products.css';
 
-export default function Product6() {
+export default function Product8() {
   const { setProduct } = useContext(Info);
   const MyImages = [
     {
       label: 'First Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/ki7qw7k0-0/shoe/9/d/t/rider-01cskywht-7-asian-white-original-imafyfxhb5rg6xzx.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kingqkw0-0/speaker/mobile-tablet-speaker/s/8/i/stone-350-boat-original-imafyebfuaumdezs.jpeg?q=70',
     },
     {
       label: 'Second Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/ki7qw7k0-0/shoe/d/i/x/rider-01cskywht-7-asian-white-original-imafyfxhs6cpuwhe.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kh3qkcw0-0/speaker/mobile-tablet-speaker/p/n/4/stone-350-boat-original-imafx73phbq4wbxy.jpeg?q=70',
     },
     {
       label: 'Third Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/kidgnm80-0/shoe/i/7/a/rider-01ncskywht-10-wilto-multi-original-imafy6cyemwuksqt.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kh3qkcw0-0/speaker/mobile-tablet-speaker/c/q/w/stone-350-boat-original-imafx73pxhd2xdhm.jpeg?q=70',
     },
     {
       label: 'Fourth Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/kidgnm80-0/shoe/n/q/g/rider-01ncskywht-8-wilto-multi-original-imafy6bhgyuhqahu.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kh3qkcw0-0/speaker/mobile-tablet-speaker/v/e/v/stone-350-boat-original-imafx73padtwcwph.jpeg?q=70',
     },
     {
       label: 'Fifth Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/ki7qw7k0-0/shoe/i/i/n/rider-01cskywht-7-asian-white-original-imafyfxh69d6wugf.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kh3qkcw0-0/speaker/mobile-tablet-speaker/y/4/t/stone-350-boat-original-imafx73pmn9syygv.jpeg?q=70',
     },
     {
       label: 'Sixth Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/ki7qw7k0-0/shoe/z/m/y/rider-01cskywht-7-asian-white-original-imafyfxhafgrme7c.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kh3qkcw0-0/speaker/mobile-tablet-speaker/7/f/g/stone-350-boat-original-imafx73pze83ewsg.jpeg?q=70',
     },
   ];
   const CollectionSize = MyImages.length;
@@ -49,11 +49,7 @@ export default function Product6() {
   return (
     <div>
       <button onClick={() => setProduct(0)}>Back</button>
-      <h3>
-        ASIAN - Rider-01 White Running Shoes for Men I Sport Shoes for Boys with
-        Beads Technology Sole for Extra Jump I Memory Foam Insole Running Shoes
-        For Men (White)
-      </h3>
+      <h3>boAt Stone 350 10 W Bluetooth Speaker (Black, Mono Channel)</h3>
       <div className="grid">
         <div className="grid1">
           <div className="mainimg">
@@ -132,24 +128,36 @@ export default function Product6() {
         </div>
         <div className="grid2">
           <p>
-            <h1>₹ 1,099</h1>
+            <h1>₹ 1,499</h1>
             <br />
             <br />
             <b>Highlights :</b>
             <br />
             <br />
             <ul>
-              <li>Color : White</li>
-              <li>Outer material : Fabric</li>
-              <li>Sole material : Phylon</li>
-              <li>14 Days Return Policy</li>
+              <li>Power Output(RMS): 10 W</li>
+              <li>Battery life: 12 hrs</li>
+              <li>IPX7: Splash and Sweat Shield</li>
+              <li>Multiple Connectivity: BT, TF Card and AUX</li>
+              <li>Wireless range: 10 m</li>
             </ul>
             <br />
             <br />
             <b>Description :</b>
             <p>
-              Rider-01 White Running Shoes for Men I Sport Shoes for Boys with
-              Beads Technology Sole for Extra Jump I Memory Foam Insole
+              Its time to enjoy a seamless playback experience courtesy boAt
+              Stone 350 10W portable wireless speaker. The speaker comes
+              equipped with 1.96 dynamic drivers for an immersive stereo
+              experience. It supports instant wireless connectivity with
+              Bluetooth v5.0. The speaker pumps out nonstop audio for up to 12
+              hours on a single full charge. Apart from the wireless
+              connectivity it comes equipped with the provision for AUX and TF
+              Card connectivity as well. Its a cylindrical construct and an IPX7
+              rated water resistance for a carefree listening time and easy
+              portability. Immerse into the realm of Nirvana wherever you go,
+              with boAt Stone 350. The speaker also supports TWS feature meaning
+              you can connect two Stone 350s and forge them into one for a
+              bigger impact.
             </p>
           </p>
           <button>Add To Cart</button>&nbsp;&nbsp;

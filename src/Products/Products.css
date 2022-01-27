@@ -10,8 +10,10 @@
 }
 .grid2 {
   margin: auto;
+  padding-left: 20px;
 }
 .mainimg {
+  
   left: 0;
   width: 90%;
   text-align: center;

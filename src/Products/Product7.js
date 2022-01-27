@@ -2,38 +2,38 @@ import React, { useContext } from 'react';
 import { Info } from '../Context';
 import './Products.css';
 
-export default function Product6() {
+export default function Product7() {
   const { setProduct } = useContext(Info);
   const MyImages = [
     {
       label: 'First Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/ki7qw7k0-0/shoe/9/d/t/rider-01cskywht-7-asian-white-original-imafyfxhb5rg6xzx.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/k6fd47k0pkrrdj/headphone/z/f/j/jbl-c100tws-original-imafmtrsguv29yz6.jpeg?q=70',
     },
     {
       label: 'Second Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/ki7qw7k0-0/shoe/d/i/x/rider-01cskywht-7-asian-white-original-imafyfxhs6cpuwhe.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kfpq5jk0-0/headphone/7/e/9/jblc100twsblkin-jblc100twsblk-jbl-original-imafw3r99zaswxnr.jpeg?q=70',
     },
     {
       label: 'Third Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/kidgnm80-0/shoe/i/7/a/rider-01ncskywht-10-wilto-multi-original-imafy6cyemwuksqt.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kqttg280/headphone/t/3/x/jblc100twsblkin-jblc100twsblk-jbl-original-imag4r5qvn3accru.jpeg?q=70',
     },
     {
       label: 'Fourth Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/kidgnm80-0/shoe/n/q/g/rider-01ncskywht-8-wilto-multi-original-imafy6bhgyuhqahu.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kqttg280/headphone/e/d/v/jblc100twsblkin-jblc100twsblk-jbl-original-imag4r5q6ech6wq3.jpeg?q=70',
     },
     {
       label: 'Fifth Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/ki7qw7k0-0/shoe/i/i/n/rider-01cskywht-7-asian-white-original-imafyfxh69d6wugf.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/kqttg280/headphone/i/d/g/jblc100twsblkin-jblc100twsblk-jbl-original-imag4r5qskm3maej.jpeg?q=70',
     },
     {
       label: 'Sixth Picture',
       imgPath:
-        'https://rukminim1.flixcart.com/image/800/960/ki7qw7k0-0/shoe/z/m/y/rider-01cskywht-7-asian-white-original-imafyfxhafgrme7c.jpeg?q=50',
+        'https://rukminim1.flixcart.com/image/416/416/krce64w0/headphone/x/6/d/jblc100twsblkin-jblc100twsblk-jbl-original-imag55ey9urjdxp7.jpeg?q=70',
     },
   ];
   const CollectionSize = MyImages.length;
@@ -50,9 +50,8 @@ export default function Product6() {
     <div>
       <button onClick={() => setProduct(0)}>Back</button>
       <h3>
-        ASIAN - Rider-01 White Running Shoes for Men I Sport Shoes for Boys with
-        Beads Technology Sole for Extra Jump I Memory Foam Insole Running Shoes
-        For Men (White)
+        JBL C100TWS True Wireless with Google Assistant Bluetooth Headset
+        (Black, True Wireless)
       </h3>
       <div className="grid">
         <div className="grid1">
@@ -132,24 +131,34 @@ export default function Product6() {
         </div>
         <div className="grid2">
           <p>
-            <h1>₹ 1,099</h1>
+            <h1>₹ 2,499</h1>
             <br />
             <br />
             <b>Highlights :</b>
             <br />
             <br />
             <ul>
-              <li>Color : White</li>
-              <li>Outer material : Fabric</li>
-              <li>Sole material : Phylon</li>
-              <li>14 Days Return Policy</li>
+              <li>Battery life: 5 hrs | Charging time: 2 hours</li>
+              <li>Advanced Stereo Calling with Crystal Clear Sound Quality</li>
+              <li>Quick Charging - 15min of Charge gives 1 Hour of charge</li>
+              <li>
+                Truly Wireless Earbuds with Auto Sync Feature. Pair only the
+                right earpod. The left one pairs automatically
+              </li>
+              <li>Bluetooth version: 5</li>
             </ul>
             <br />
             <br />
             <b>Description :</b>
             <p>
-              Rider-01 White Running Shoes for Men I Sport Shoes for Boys with
-              Beads Technology Sole for Extra Jump I Memory Foam Insole
+              Groove to your favorite songs wirelessly by bringing home the JBL
+              C100TWS True Wireless Earbuds. Thanks to Bluetooth 5.0
+              connectivity, you can wirelessly listen to songs without any
+              distortion or lag. This fully charged pair of earbuds offers a
+              playtime of up to 5 hours on a single charge. With the charging
+              case, you can further get a runtime of up to 12 hours. So, all you
+              need to do is keep your playlist ready and be prepared to stay
+              entertained for long hours.
             </p>
           </p>
           <button>Add To Cart</button>&nbsp;&nbsp;
