@@ -50,7 +50,7 @@ export default function Product1() {
     alert('SAMSUNG Galaxy A21s is Added to Cart');
     const addProduct = [
       {
-        pId: 1,
+        pId: `1-${Date.now()}`,
         pImg: 'https://rukminim1.flixcart.com/image/224/224/kbi9h8w0/mobile/g/g/c/samsung-galaxy-a21s-sm-a217fzkfins-original-imafsuyajewgnfcg.jpeg?q=90',
         pName: 'SAMSUNG Galaxy A21s',
         pQty: 1,

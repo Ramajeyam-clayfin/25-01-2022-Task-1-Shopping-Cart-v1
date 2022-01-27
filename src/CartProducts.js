@@ -3,25 +3,37 @@ import { Info } from './Context';
 
 export default function CartProducts() {
   const { cartItems, setCartItems } = useContext(Info);
-  const [qty, setQty] = useState(1);
-  const price = Amnt();
   const [tPrice, setPrice] = useState(Amnt());
 
   function Amnt() {
-    let amount = cartItems.map((a) => a.pPrice);
-    let [p1,p2] = amount;
-    console.log(p1);
-    console.log(p2);
-    return amount;
+    let price = cartItems.reduce(
+      (total, product) => total + product.pPrice * product.pQty,
+      0
+    );
+    return price;
   }
-  let Addqty = () => {
-    setQty(qty + 1);
-    setPrice(price * (qty + 1));
+  let addqty = (id) => {
+    const newArr = cartItems.map((obj) => {
+      if (obj.pId === id) {
+        obj = { pQty: obj.pQty++, ...obj };
+      }
+      return obj;
+    });
+    setCartItems(newArr);
+    setPrice(Amnt());
+    return;
   };
 
-  let Subqty = () => {
-    setQty(qty - 1);
-    setPrice(price * (qty - 1));
+  let Subqty = (id) => {
+    const newArr = cartItems.map((obj) => {
+      if (obj.pId === id) {
+        obj = { pQty: obj.pQty--, ...obj };
+      }
+      return obj;
+    });
+    setCartItems(newArr);
+    setPrice(Amnt());
+    return;
   };
 
   return (
@@ -30,10 +42,10 @@ export default function CartProducts() {
         <div key={x.pId}>
           <img style={{ height: 50 }} src={x.pImg} />
           &nbsp;&nbsp;
-          {x.pName}&nbsp;&nbsp; Price : ₹ {x.pPrice}&nbsp;&nbsp; Qty : {qty}
+          {x.pName}&nbsp;&nbsp; Price : ₹ {x.pPrice}&nbsp;&nbsp; Qty : {x.pQty}
           &nbsp;&nbsp;
-          <button onClick={() => Addqty()}>+</button>&nbsp;&nbsp;{' '}
-          <button onClick={() => Subqty()}>-</button>
+          <button onClick={() => addqty(x.pId)}>+</button>&nbsp;&nbsp;{' '}
+          <button onClick={() => Subqty(x.pId)}>-</button>
         </div>
       ))}
       Total Price : ₹ {tPrice}
