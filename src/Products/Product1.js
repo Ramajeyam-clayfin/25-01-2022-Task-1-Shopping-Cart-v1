@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { Info } from '../Context';
 import './Products.css';
+import IconButton from '@mui/material/IconButton';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import Button from '@mui/material/Button';
 
 export default function Product1() {
   const { setProduct, cartItems, setCartItems, setStep } = useContext(Info);
@@ -36,21 +39,24 @@ export default function Product1() {
         'https://rukminim1.flixcart.com/image/416/416/kbi9h8w0/mobile/g/g/c/samsung-galaxy-a21s-sm-a217fzkfins-original-imafsuyawvhehrsj.jpeg?q=70',
     },
   ];
-  const CollectionSize = MyImages.length;
-  const [index, setActiveStep] = React.useState(0);
+  const CollectionSize = MyImages.length; //stores the length of the MyImages array
+  const [index, setIndex] = React.useState(0); // used to navigate images
 
   const goToNextPicture = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    //used to show next image
+    setIndex((prevIndex) => prevIndex + 1);
   };
   const goToPrevPicture = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    // used to show previos image
+    setIndex((prevIndex) => prevIndex - 1);
   };
   let Addcart = (e) => {
+    //used to add the product details into cart
     e.preventDefault();
     alert('SAMSUNG Galaxy A21s is Added to Cart');
     const addProduct = [
       {
-        pId: `1-${Date.now()}`,
+        pId: 1,
         pImg: 'https://rukminim1.flixcart.com/image/224/224/kbi9h8w0/mobile/g/g/c/samsung-galaxy-a21s-sm-a217fzkfins-original-imafsuyajewgnfcg.jpeg?q=90',
         pName: 'SAMSUNG Galaxy A21s',
         pQty: 1,
@@ -63,9 +69,14 @@ export default function Product1() {
 
   return (
     <div>
-      <button onClick={() => setProduct(0)}>Back</button>&nbsp;&nbsp;
-      <button onClick={() => setStep(1)}>Cart</button>
-      <h3>SAMSUNG Galaxy A21s (Black, 64 GB) (4 GB RAM)</h3>
+        <div className='cart'>
+        <Button variant="contained" onClick={() => setProduct(0)}  style={{ float: 'left' }}  >❮ Back </Button>
+          <IconButton color="primary" aria-label="add to shopping cart" >
+            <AddShoppingCartIcon onClick={() => setStep(1)}  />
+          </IconButton>
+        </div>
+      
+      <h3 className='title'>SAMSUNG Galaxy A21s (Black, 64 GB) (4 GB RAM)</h3>
       <div className="grid">
         <div className="grid1">
           <div className="mainimg">
@@ -98,7 +109,7 @@ export default function Product1() {
                 className="thumbimg"
                 style={{ width: 'auto' }}
                 src={MyImages[0].imgPath}
-                onClick={() => setActiveStep(0)}
+                onClick={() => setIndex(0)}
               />
             </div>
 
@@ -107,7 +118,7 @@ export default function Product1() {
                 className="thumbimg"
                 style={{ width: 'auto' }}
                 src={MyImages[1].imgPath}
-                onClick={() => setActiveStep(1)}
+                onClick={() => setIndex(1)}
               />
             </div>
 
@@ -116,7 +127,7 @@ export default function Product1() {
                 className="thumbimg"
                 style={{ width: 'auto' }}
                 src={MyImages[2].imgPath}
-                onClick={() => setActiveStep(2)}
+                onClick={() => setIndex(2)}
               />
             </div>
 
@@ -125,7 +136,7 @@ export default function Product1() {
                 className="thumbimg"
                 style={{ width: 'auto' }}
                 src={MyImages[3].imgPath}
-                onClick={() => setActiveStep(3)}
+                onClick={() => setIndex(3)}
               />
             </div>
 
@@ -134,7 +145,7 @@ export default function Product1() {
                 className="thumbimg"
                 style={{ width: 'auto' }}
                 src={MyImages[4].imgPath}
-                onClick={() => setActiveStep(4)}
+                onClick={() => setIndex(4)}
               />
             </div>
 
@@ -143,7 +154,7 @@ export default function Product1() {
                 className="thumbimg"
                 style={{ width: 'auto' }}
                 src={MyImages[5].imgPath}
-                onClick={() => setActiveStep(5)}
+                onClick={() => setIndex(5)}
               />
             </div>
           </div>
@@ -177,8 +188,8 @@ export default function Product1() {
               front camera with Live Focus effects.
             </p>
           </>
-          <button onClick={(e) => Addcart(e)}>Add To Cart</button>&nbsp;&nbsp;
-          <button>Buy Now</button>
+          <Button variant="outlined"  endIcon={} onClick={(e) => Addcart(e)} >Add to Cart </Button>&nbsp;&nbsp;
+          <Button variant="contained"  > BUY Now </Button>
         </div>
       </div>
     </div>

@@ -11,12 +11,15 @@ import Product8 from './Products/Product8';
 import Product9 from './Products/Product9';
 import Product10 from './Products/Product10';
 import './items.css';
+import IconButton from '@mui/material/IconButton';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import Button from '@mui/material/Button';
 
 export default function Items() {
-  const { product, setProduct, artItems, setStep, setCartItems } =
-    useContext(Info);
+  const { product } = useContext(Info);
 
   function showProduct(product) {
+    //conditional rednering using switch
     switch (product) {
       case 0:
         return <Display />;
@@ -44,12 +47,13 @@ export default function Items() {
   }
 
   function Display() {
-    const { product, setProduct, cartItems, setStep, setCartItems } =
-      useContext(Info);
+    const { setProduct, cartItems, setStep, setCartItems } = useContext(Info); //import variables from context.js
     let id = 0;
 
     let Addcart = (e, id) => {
+      //when add cart button is clicked
       e.preventDefault();
+      //condition for each product to push individual product details inside the array(cartItems)
       if (id == 1) {
         alert('SAMSUNG Galaxy A21s is Added to Cart');
         const addProduct1 = [
@@ -60,9 +64,9 @@ export default function Items() {
             pQty: 1,
             pPrice: 17499,
           },
-          ...cartItems,
+          ...cartItems, //other ojects are stored in rest
         ];
-        setCartItems(addProduct1);
+        setCartItems(addProduct1); //using useState addProduct1 is moved inside to cartItems array
       } else if (id == 2) {
         alert('Teddy Bear is Added to Cart');
         const addProduct2 = [
@@ -183,11 +187,15 @@ export default function Items() {
       }
     };
 
-
     return (
       <div className="products">
-        <button onClick={() => setStep(1)}>Cart</button>
-        <h1>Shopping Cart Application</h1>
+        {/* to navigate cart page */}
+        <div className='cart'>
+          <IconButton color="primary" aria-label="add to shopping cart" >
+            <AddShoppingCartIcon onClick={() => setStep(1)}  />
+          </IconButton>
+        </div>
+        <h1 className='title'>SHOPPING CART APPLICATION</h1>
 
         <div className="product1">
           <a
@@ -198,12 +206,16 @@ export default function Items() {
             <img src="https://rukminim1.flixcart.com/image/150/150/kbi9h8w0/mobile/g/g/c/samsung-galaxy-a21s-sm-a217fzkfins-original-imafsuyajewgnfcg.jpeg?q=70" />
           </a>
           <div>
-            <p> SAMSUNG Galaxy A21s</p>
-            <p>Price : ₹ 17,499 </p>
-            <button onClick={() => setProduct(1)}>Details</button>
-            <button onClick={(e) => Addcart(e, (id = 1))}>Add to Cart</button>
             <br />
-            
+            <b> SAMSUNG Galaxy A21s</b>
+            <br />
+            <br />
+            <b>Price : ₹ 17,499 </b>
+            <br />
+            <br />
+            <Button variant="outlined" onClick={() => setProduct(1)} > Details </Button>&nbsp;&nbsp;
+            <Button variant="contained" endIcon={} onClick={(e) => Addcart(e, (id = 1))} >Add to Cart </Button>
+            <br />
           </div>
         </div>
 
@@ -216,12 +228,16 @@ export default function Items() {
             <img src="https://rukminim1.flixcart.com/image/150/150/kqttg280/stuffed-toy/c/y/n/cute-nylex-mother-teddy-bear-40-fluffies-original-imag4r4yzgauqdxb.jpeg?q=70" />
           </a>
           <div>
-            <p> Teddy Bear</p>
-            <p>Price : ₹ 178 </p>
-            <button onClick={() => setProduct(2)}>Details</button>
-            <button onClick={(e) => Addcart(e, (id = 2))}>Add to Cart</button>
             <br />
-            
+            <b> Teddy Bear</b>
+            <br />
+            <br />
+            <b>Price : ₹ 178 </b>
+            <br />
+            <br />
+            <Button variant="outlined" onClick={() => setProduct(2)} > Details </Button>&nbsp;&nbsp;
+            <Button variant="contained" endIcon={} onClick={(e) => Addcart(e, (id = 2))} >Add to Cart </Button>
+            <br />
           </div>
         </div>
 
@@ -234,12 +250,16 @@ export default function Items() {
             <img src="https://rukminim1.flixcart.com/image/150/150/k0wqwsw0/electric-kettle/g/t/d/butterfly-rapid-kettle-1-5-litre-wave-750-ml-water-bottle-rapid-original-imafkfy7zaekbubs.jpeg?q=70" />
           </a>
           <div>
-            <p> Electric Kettle</p>
-            <p>Price : ₹ 894 </p>
-            <button onClick={() => setProduct(3)}>Details</button>
-            <button onClick={(e) => Addcart(e, (id = 3))}>Add to Cart</button>
             <br />
-            
+            <b> Electric Kettle</b>
+            <br />
+            <br />
+            <b>Price : ₹ 894 </b>
+            <br />
+            <br />
+            <Button variant="outlined" onClick={() => setProduct(3)} > Details </Button>&nbsp;&nbsp;
+            <Button variant="contained" endIcon={} onClick={(e) => Addcart(e, (id = 3))} >Add to Cart </Button>
+            <br />
           </div>
         </div>
 
@@ -252,12 +272,16 @@ export default function Items() {
             <img src="https://rukminim1.flixcart.com/image/150/150/sewing-machine/f/c/y/usha-marvella-original-imaegyvtgv6k4rvk.jpeg?q=70" />
           </a>
           <div>
-            <p>Sewing Machine</p>
-            <p>Price : ₹ 12,900 </p>
-            <button onClick={() => setProduct(4)}>Details</button>
-            <button onClick={(e) => Addcart(e, (id = 4))}>Add to Cart</button>
             <br />
-            
+            <b>Sewing Machine</b>
+            <br />
+            <br />
+            <b>Price : ₹ 12,900 </b>
+            <br />
+            <br />
+            <Button variant="outlined" onClick={() => setProduct(4)} > Details </Button>&nbsp;&nbsp;
+            <Button variant="contained" endIcon={} onClick={(e) => Addcart(e, (id = 4))} >Add to Cart </Button>
+            <br />
           </div>
         </div>
 
@@ -270,12 +294,16 @@ export default function Items() {
             <img src="https://rukminim1.flixcart.com/image/150/150/ki3gknk0-0/backpack/t/n/i/spacy-unisex-backpack-with-rain-cover-and-reflective-strip-p-041-original-imafxyypsycttkeb.jpeg?q=70" />
           </a>
           <div>
-            <p>Backpack</p>
-            <p>Price : ₹ 710 </p>
-            <button onClick={() => setProduct(5)}>Details</button>
-            <button onClick={(e) => Addcart(e, (id = 5))}>Add to Cart</button>
             <br />
-            
+            <b>Backpack</b>
+            <br />
+            <br />
+            <b>Price : ₹ 710 </b>
+            <br />
+            <br />
+            <Button variant="outlined" onClick={() => setProduct(5)} > Details </Button>&nbsp;&nbsp;
+            <Button variant="contained" endIcon={} onClick={(e) => Addcart(e, (id = 5))} >Add to Cart </Button>
+            <br />
           </div>
         </div>
 
@@ -288,12 +316,16 @@ export default function Items() {
             <img src="https://rukminim1.flixcart.com/image/150/150/ksaoqkw0/shoe/y/j/x/9-rider-01cwhiteskyy-asian-white-sky-original-imag5wa8kfhmvvnt.jpeg?q=70" />
           </a>
           <div>
-            <p>Shoe</p>
-            <p>Price : ₹ 1,099 </p>
-            <button onClick={() => setProduct(6)}>Details</button>
-            <button onClick={(e) => Addcart(e, (id = 6))}>Add to Cart</button>
             <br />
-            
+            <b>Shoe</b>
+            <br />
+            <br />
+            <b>Price : ₹ 1,099 </b>
+            <br />
+            <br />
+            <Button variant="outlined" onClick={() => setProduct(6)} > Details </Button>&nbsp;&nbsp;
+            <Button variant="contained" endIcon={} onClick={(e) => Addcart(e, (id = 6))} >Add to Cart </Button>
+            <br />
           </div>
         </div>
 
@@ -306,12 +338,16 @@ export default function Items() {
             <img src="https://rukminim1.flixcart.com/image/150/150/k6fd47k0pkrrdj/headphone/z/f/j/jbl-c100tws-original-imafmtrsguv29yz6.jpeg?q=70" />
           </a>
           <div>
-            <p>True Wireless Headphone</p>
-            <p>Price : ₹ 2,499 </p>
-            <button onClick={() => setProduct(7)}>Details</button>
-            <button onClick={(e) => Addcart(e, (id = 7))}>Add to Cart</button>
             <br />
-            
+            <b>True Wireless Headphone</b>
+            <br />
+            <br />
+            <b>Price : ₹ 2,499 </b>
+            <br />
+            <br />
+            <Button variant="outlined" onClick={() => setProduct(7)} > Details </Button>&nbsp;&nbsp;
+            <Button variant="contained" endIcon={} onClick={(e) => Addcart(e, (id = 7))} >Add to Cart </Button>
+            <br />
           </div>
         </div>
 
@@ -324,12 +360,16 @@ export default function Items() {
             <img src="https://rukminim1.flixcart.com/image/150/150/kingqkw0-0/speaker/mobile-tablet-speaker/s/8/i/stone-350-boat-original-imafyebfuaumdezs.jpeg?q=70" />
           </a>
           <div>
-            <p>Bluetooth Speaker</p>
-            <p>Price : ₹ 1,499 </p>
-            <button onClick={() => setProduct(8)}>Details</button>
-            <button onClick={(e) => Addcart(e, (id = 8))}>Add to Cart</button>
             <br />
-            
+            <b>Bluetooth Speaker</b>
+            <br />
+            <br />
+            <b>Price : ₹ 1,499 </b>
+            <br />
+            <br />
+            <Button variant="outlined" onClick={() => setProduct(8)} > Details </Button>&nbsp;&nbsp;
+            <Button variant="contained" endIcon={} onClick={(e) => Addcart(e, (id = 8))} >Add to Cart </Button>
+            <br />
           </div>
         </div>
 
@@ -342,12 +382,16 @@ export default function Items() {
             <img src="https://rukminim1.flixcart.com/image/150/150/k7dnonk0/sunglass/c/d/b/medium-ro-dc001-elligator-original-imafpmy5rurzjutm.jpeg?q=70" />
           </a>
           <div>
-            <p>Sunglass</p>
-            <p>Price : ₹ 198 </p>
-            <button onClick={() => setProduct(9)}>Details</button>
-            <button onClick={(e) => Addcart(e, (id = 9))}>Add to Cart</button>
             <br />
-            
+            <b>Sunglass</b>
+            <br />
+            <br />
+            <b>Price : ₹ 198 </b>
+            <br />
+            <br />
+            <Button variant="outlined" onClick={() => setProduct(9)} > Details </Button>&nbsp;&nbsp;
+            <Button variant="contained" endIcon={} onClick={(e) => Addcart(e, (id = 9))} >Add to Cart </Button>
+            <br />
           </div>
         </div>
 
@@ -360,12 +404,16 @@ export default function Items() {
             <img src="https://rukminim1.flixcart.com/image/150/150/k9d3p8w0/headphone/j/v/f/rockerz-255f-rockerz-255-boat-original-imafr68zshenv3ya.jpeg?q=70" />
           </a>
           <div>
-            <p>Wireless Headphone</p>
-            <p>Price : ₹ 949 </p>
-            <button onClick={() => setProduct(10)}>Details</button>
-            <button onClick={(e) => Addcart(e, (id = 10))}>Add to Cart</button>
             <br />
-            
+            <b>Wireless Headphone</b>
+            <br />
+            <br />
+            <b>Price : ₹ 949 </b>
+            <br />
+            <br />
+            <Button variant="outlined" onClick={() => setProduct(10)} > Details </Button>&nbsp;&nbsp;
+            <Button variant="contained" endIcon={} onClick={(e) => Addcart(e, (id = 10))} >Add to Cart </Button>
+            <br />
           </div>
         </div>
       </div>

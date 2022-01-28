@@ -7,13 +7,13 @@
 .grid1 {
   flex-grow: 1;
   margin: auto;
+  border-right: 1px solid black;
 }
 .grid2 {
   margin: auto;
   padding-left: 20px;
 }
 .mainimg {
-  
   left: 0;
   width: 90%;
   text-align: center;
@@ -52,4 +52,13 @@
 }
 .thumbimg:hover {
   opacity: 1;
+}
+.cart {
+  text-align: end;
+}
+.title {
+  text-align: center;
+}
+.back {
+  text-align: start;
 }

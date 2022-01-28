@@ -1,6 +1,9 @@
 import React, { useContext } from 'react';
 import { Info } from '../Context';
 import './Products.css';
+import IconButton from '@mui/material/IconButton';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import Button from '@mui/material/Button';
 
 export default function Product3() {
   const { setProduct, cartItems, setCartItems, setStep } = useContext(Info);
@@ -53,9 +56,14 @@ export default function Product3() {
 
   return (
     <div>
-      <button onClick={() => setProduct(0)}>Back</button>&nbsp;&nbsp;
-      <button onClick={() => setStep(1)}>Cart</button>
-      <h3>Butterfly Rapid Kettle 1.5 Litre + Eco 750 Ml Water Bottle)</h3>
+      <div className='cart'>
+        <Button variant="contained" onClick={() => setProduct(0)}  style={{ float: 'left' }}  >❮ Back </Button>
+          <IconButton color="primary" aria-label="add to shopping cart" >
+            <AddShoppingCartIcon onClick={() => setStep(1)}  />
+          </IconButton>
+        </div>
+      
+      <h3 className='title'>Butterfly Rapid Kettle 1.5 Litre + Eco 750 Ml Water Bottle)</h3>
       <div className="grid">
         <div className="grid1">
           <div className="mainimg">
@@ -143,8 +151,8 @@ export default function Product3() {
               features & stainless Steel water bottle , making it safe to use.
             </p>
           </>
-          <button onClick={(e) => Addcart(e)}>Add To Cart</button>&nbsp;&nbsp;
-          <button>Buy Now</button>
+          <Button variant="outlined"  endIcon={} onClick={(e) => Addcart(e)} >Add to Cart </Button>&nbsp;&nbsp;
+          <Button variant="contained"  > BUY Now </Button>
         </div>
       </div>
     </div>
